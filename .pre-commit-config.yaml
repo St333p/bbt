@@ -1,0 +1,63 @@
+# Skip execution of one or more hooks using the SKIP environment variable:
+# $ SKIP=pylint git commit -m "foo"
+# $ SKIP=mypy,pylint pre-commit run --all-files
+#
+# If want to disable all hooks while committing, use the --no-verify/-n option:
+# $ git commit -n -m "foo"
+
+repos:
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v4.4.0
+    hooks:
+      - id: trailing-whitespace
+      - id: end-of-file-fixer
+      - id: mixed-line-ending
+      - id: check-case-conflict
+      # - id: check-executables-have-shebangs
+      # - id: check-shebang-scripts-are-executable
+      # - id: fix-byte-order-marker
+      # - id: fix-encoding-pragma
+      - id: check-yaml
+      - id: check-json
+      # - id: pretty-format-json
+      - id: check-merge-conflict
+      - id: check-vcs-permalinks
+      - id: detect-private-key
+      - id: debug-statements
+      - id: requirements-txt-fixer
+      #- id: check-docstring-first
+      # - id: name-tests-test
+  - repo: https://github.com/PyCQA/isort
+    rev: 5.12.0
+    hooks:
+      - id: isort
+        name: isort (black profile, in place fixes)
+        args: ["--profile", "black", "--filter-files"]
+        language: python
+        types: [python]
+  - repo: https://github.com/PyCQA/flake8
+    rev: 6.1.0
+    hooks:
+      - id: flake8
+        language: python
+        types: [python]
+  - repo: https://github.com/psf/black
+    rev: 23.7.0
+    hooks:
+      - id: black
+        name: black (in place fixes)
+        # args: [--diff, --check]
+        # It is recommended to specify the latest version of Python
+        # supported by your project here, or alternatively use
+        # pre-commit's default_language_version, see
+        # https://pre-commit.com/#top_level-default_language_version
+        # language_version: python3.11
+        language: python
+        types: [python]
+  - repo: https://github.com/pre-commit/mirrors-mypy
+    rev: v1.5.1
+    hooks:
+      - id: mypy
+        additional_dependencies: [types-requests]
+        language: python
+        types: [python]
