@@ -11,13 +11,13 @@
 import random
 import time
 
-from btclib.ecc.curve import secp256k1 as ec
 from btclib.curvegroup import (
     _mult_base_3,
     _mult_fixed_window,
     _mult_jac,
     _mult_mont_ladder,
 )
+from btclib.ecc.curve import secp256k1 as ec
 
 # setup
 random.seed(42)

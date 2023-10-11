@@ -1,9 +1,9 @@
 from hashlib import sha256 as hf
 
 from btclib import dsa
+from btclib.dh import ansi_x9_63_kdf
 from btclib.ecc.curve import mult
 from btclib.ecc.curve import secp256k1 as ec
-from btclib.dh import ansi_x9_63_kdf
 
 # Diffie-Hellman
 print("\n Diffie-Hellman")

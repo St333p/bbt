@@ -10,8 +10,8 @@
 
 from btclib.ecc.curve import mult
 from btclib.ecc.curve import secp256k1 as ec
-from btclib.ecc.dsa import recover_pub_keys, sign, verify
 from btclib.ecc.der import Sig
+from btclib.ecc.dsa import recover_pub_keys, sign, verify
 
 print("\n*** EC:")
 print(ec)
@@ -25,7 +25,7 @@ print(f"PubKey: {'02' if Q[1] % 2 == 0 else '03'} {hex(Q[0]).upper()}")
 
 
 print("\n1. Message to be signed")
-msg1 = "Paolo is afraid of ephemeral random numbers".encode()
+msg1 = b"Paolo is afraid of ephemeral random numbers"
 print(msg1.decode())
 
 print("2. Sign message")
@@ -53,7 +53,7 @@ print(verify(msg1, Q, Sig(sig1.r, sm), False))
 
 
 print("\n1. Another message to sign")
-msg2 = "and Paolo is right to be afraid".encode()
+msg2 = b"and Paolo is right to be afraid"
 print(msg2.decode())
 
 print("2. Sign message")

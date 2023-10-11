@@ -8,14 +8,13 @@
 # No part of btclib including this file, may be copied, modified, propagated,
 # or distributed except according to the terms contained in the LICENSE file.
 
-from btclib.b58 import p2pkh, p2wpkh_p2sh
-from btclib.b58 import wif_from_prv_key
 from btclib.b32 import p2wpkh
+from btclib.b58 import p2pkh, p2wpkh_p2sh, wif_from_prv_key
 from btclib.ecc.bms import sign, verify
 from btclib.to_prv_key import prv_keyinfo_from_prv_key
 from btclib.to_pub_key import pub_keyinfo_from_prv_key
 
-msg = "Paolo is afraid of ephemeral random numbers".encode()
+msg = b"Paolo is afraid of ephemeral random numbers"
 print("\n0. Message:", msg.decode())
 
 wif = b"Kx45GeUBSMPReYQwgXiKhG9FzNXrnCeutJp4yjTd5kKxCitadm3C"

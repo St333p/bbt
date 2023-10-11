@@ -421,6 +421,6 @@ with open(filename, "w") as json_file:
     json.dump(mydict, json_file, sort_keys=True, indent=4)
 
 if __name__ == "__main__":
-    with open(filename, "r") as f:
+    with open(filename) as f:
         mydict2 = json.load(f)
     assert mydict == mydict2

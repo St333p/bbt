@@ -1,7 +1,7 @@
 # Bitcoin and Blockchain Technology
 
-University of Milano-Bicocca  
-Politecnico di Milano  
+University of Milano-Bicocca
+Politecnico di Milano
 University of Milano
 
 The latest version of the course slides is available from the course page at <http://www.ametrano.net/bbt/>.

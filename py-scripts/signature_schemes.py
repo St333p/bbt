@@ -1,6 +1,6 @@
 from btclib.ecc import bms, dsa, ssa
 
-msg = "Hello, I'm Alice!".encode()
+msg = b"Hello, I'm Alice!"
 print("\n", msg.decode())
 
 # ECDSA

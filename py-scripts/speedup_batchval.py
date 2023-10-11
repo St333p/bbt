@@ -29,7 +29,6 @@ sig = [_sign(msg, qq) for msg, qq in zip(m, q)]
 Q = [mult(qq, ec.G)[0] for qq in q]
 
 for n in n_sig:
-
     # no batch
     start = time.time()
     for j in range(n):

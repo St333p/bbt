@@ -7,7 +7,6 @@
 #
 # No part of btclib including this file, may be copied, modified, propagated,
 # or distributed except according to the terms contained in the LICENSE file.
-
 """Elliptic curves.
 
 * SEC 2 v.2 curves
@@ -20,7 +19,6 @@
 * Brainpool_params standard curves
   https://tools.ietf.org/html/rfc5639
 * test curves with very low cardinality
-
 """
 
 # scroll down at the end of the file for 'relevant' code
@@ -35,7 +33,7 @@ datadir = path.join(path.dirname(__file__), "..", "..", "btclib", "btclib", "dat
 # http://www.secg.org/SEC2-Ver-1.0.pdf
 SEC2v1_params = {}
 
-p = (2 ** 128 - 3) // 76439
+p = (2**128 - 3) // 76439
 a = 0xDB7C2ABF62E35E668076BEAD2088
 b = 0x659EF8BA043916EEDE8911702B22
 Gx = 0x09487239995A5EE76B55F9C2F098
@@ -44,7 +42,7 @@ n = 0xDB7C2ABF62E35E7628DFAC6561C5
 h = 1
 SEC2v1_params["secp112r1"] = [hex(p), hex(a), hex(b), [hex(Gx), hex(Gy)], hex(n), h]
 
-p = (2 ** 128 - 3) // 76439
+p = (2**128 - 3) // 76439
 a = 0x6127C24C05F38A0AAAF65C0EF02C
 b = 0x51DEF1815DB5ED74FCC34C85D709
 Gx = 0x4BA30AB5E892B4E1649DD0928643
@@ -53,7 +51,7 @@ n = 0x36DF0AAFD8B8D7597CA10520D04B
 h = 4
 SEC2v1_params["secp112r2"] = [hex(p), hex(a), hex(b), [hex(Gx), hex(Gy)], hex(n), h]
 
-p = 2 ** 128 - 2 ** 97 - 1
+p = 2**128 - 2**97 - 1
 a = 0xFFFFFFFDFFFFFFFFFFFFFFFFFFFFFFFC
 b = 0xE87579C11079F43DD824993C2CEE5ED3
 Gx = 0x161FF7528B899B2D0C28607CA52C5B86
@@ -62,7 +60,7 @@ n = 0xFFFFFFFE0000000075A30D1B9038A115
 h = 1
 SEC2v1_params["secp128r1"] = [hex(p), hex(a), hex(b), [hex(Gx), hex(Gy)], hex(n), h]
 
-p = 2 ** 128 - 2 ** 97 - 1
+p = 2**128 - 2**97 - 1
 a = 0xD6031998D1B3BBFEBF59CC9BBFF9AEE1
 b = 0x5EEEFCA380D02919DC2C6558BB6D8A5D
 Gx = 0x7B6AA5D85E572983E6FB32A7CDEBC140
@@ -72,15 +70,15 @@ h = 4
 SEC2v1_params["secp128r2"] = [hex(p), hex(a), hex(b), [hex(Gx), hex(Gy)], hex(n), h]
 
 p = (
-    2 ** 160
-    - 2 ** 32
-    - 2 ** 14
-    - 2 ** 12
-    - 2 ** 9
-    - 2 ** 8
-    - 2 ** 7
-    - 2 ** 3
-    - 2 ** 2
+    2**160
+    - 2**32
+    - 2**14
+    - 2**12
+    - 2**9
+    - 2**8
+    - 2**7
+    - 2**3
+    - 2**2
     - 1
 )
 a = 0x0000000000000000000000000000000000000000
@@ -91,7 +89,7 @@ n = 0x0100000000000000000001B8FA16DFAB9ACA16B6B3
 h = 1
 SEC2v1_params["secp160k1"] = [hex(p), hex(a), hex(b), [hex(Gx), hex(Gy)], hex(n), h]
 
-p = 2 ** 160 - 2 ** 31 - 1
+p = 2**160 - 2**31 - 1
 a = 0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF7FFFFFFC
 b = 0x1C97BEFC54BD7A8B65ACF89F81D4D4ADC565FA45
 Gx = 0x4A96B5688EF573284664698968C38BB913CBFC82
@@ -101,15 +99,15 @@ h = 1
 SEC2v1_params["secp160r1"] = [hex(p), hex(a), hex(b), [hex(Gx), hex(Gy)], hex(n), h]
 
 p = (
-    2 ** 160
-    - 2 ** 32
-    - 2 ** 14
-    - 2 ** 12
-    - 2 ** 9
-    - 2 ** 8
-    - 2 ** 7
-    - 2 ** 3
-    - 2 ** 2
+    2**160
+    - 2**32
+    - 2**14
+    - 2**12
+    - 2**9
+    - 2**8
+    - 2**7
+    - 2**3
+    - 2**2
     - 1
 )
 a = 0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFEFFFFAC70
@@ -128,7 +126,7 @@ with open(filename, "w") as json_file:
 # http://www.secg.org/sec2-v2.pdf
 SEC2v2_params = {}
 
-p = 2 ** 192 - 2 ** 32 - 2 ** 12 - 2 ** 8 - 2 ** 7 - 2 ** 6 - 2 ** 3 - 1
+p = 2**192 - 2**32 - 2**12 - 2**8 - 2**7 - 2**6 - 2**3 - 1
 a = 0
 b = 3
 Gx = 0xDB4FF10EC057E9AE26B07D0280B7F4341DA5D1B1EAE06C7D
@@ -137,7 +135,7 @@ n = 0xFFFFFFFFFFFFFFFFFFFFFFFE26F2FC170F69466A74DEFD8D
 h = 1
 SEC2v2_params["secp192k1"] = [hex(p), hex(a), hex(b), [hex(Gx), hex(Gy)], hex(n), h]
 
-p = 2 ** 192 - 2 ** 64 - 1
+p = 2**192 - 2**64 - 1
 a = 0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFEFFFFFFFFFFFFFFFC
 b = 0x64210519E59C80E70FA7E9AB72243049FEB8DEECC146B9B1
 Gx = 0x188DA80EB03090F67CBF20EB43A18800F4FF0AFD82FF1012
@@ -146,7 +144,7 @@ n = 0xFFFFFFFFFFFFFFFFFFFFFFFF99DEF836146BC9B1B4D22831
 h = 1
 SEC2v2_params["secp192r1"] = [hex(p), hex(a), hex(b), [hex(Gx), hex(Gy)], hex(n), h]
 
-p = 2 ** 224 - 2 ** 32 - 2 ** 12 - 2 ** 11 - 2 ** 9 - 2 ** 7 - 2 ** 4 - 2 - 1
+p = 2**224 - 2**32 - 2**12 - 2**11 - 2**9 - 2**7 - 2**4 - 2 - 1
 a = 0
 b = 5
 Gx = 0xA1455B334DF099DF30FC28A169A467E9E47075A90F7E650EB6B7A45C
@@ -155,7 +153,7 @@ n = 0x010000000000000000000000000001DCE8D2EC6184CAF0A971769FB1F7
 h = 1
 SEC2v2_params["secp224k1"] = [hex(p), hex(a), hex(b), [hex(Gx), hex(Gy)], hex(n), h]
 
-p = 2 ** 224 - 2 ** 96 + 1
+p = 2**224 - 2**96 + 1
 a = 0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFEFFFFFFFFFFFFFFFFFFFFFFFE
 b = 0xB4050A850C04B3ABF54132565044B0B7D7BFD8BA270B39432355FFB4
 Gx = 0xB70E0CBD6BB4BF7F321390B94A03C1D356C21122343280D6115C1D21
@@ -165,7 +163,7 @@ h = 1
 SEC2v2_params["secp224r1"] = [hex(p), hex(a), hex(b), [hex(Gx), hex(Gy)], hex(n), h]
 
 # bitcoin curve
-p = 2 ** 256 - 2 ** 32 - 977
+p = 2**256 - 2**32 - 977
 a = 0
 b = 7
 Gx = 0x79BE667EF9DCBBAC55A06295CE870B07029BFCDB2DCE28D959F2815B16F81798
@@ -174,7 +172,7 @@ n = 0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFEBAAEDCE6AF48A03BBFD25E8CD0364141
 h = 1
 SEC2v2_params["secp256k1"] = [hex(p), hex(a), hex(b), [hex(Gx), hex(Gy)], hex(n), h]
 
-p = 2 ** 256 - 2 ** 224 + 2 ** 192 + 2 ** 96 - 1
+p = 2**256 - 2**224 + 2**192 + 2**96 - 1
 a = 0xFFFFFFFF00000001000000000000000000000000FFFFFFFFFFFFFFFFFFFFFFFC
 b = 0x5AC635D8AA3A93E7B3EBBD55769886BC651D06B0CC53B0F63BCE3C3E27D2604B
 Gx = 0x6B17D1F2E12C4247F8BCE6E563A440F277037D812DEB33A0F4A13945D898C296
@@ -183,7 +181,7 @@ n = 0xFFFFFFFF00000000FFFFFFFFFFFFFFFFBCE6FAADA7179E84F3B9CAC2FC632551
 h = 1
 SEC2v2_params["secp256r1"] = [hex(p), hex(a), hex(b), [hex(Gx), hex(Gy)], hex(n), h]
 
-p = 2 ** 384 - 2 ** 128 - 2 ** 96 + 2 ** 32 - 1
+p = 2**384 - 2**128 - 2**96 + 2**32 - 1
 a = 0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFEFFFFFFFF0000000000000000FFFFFFFC
 b = 0xB3312FA7E23EE7E4988E056BE3F82D19181D9C6EFE8141120314088F5013875AC656398D8A2ED19D2A85C8EDD3EC2AEF
 Gx = 0xAA87CA22BE8B05378EB1C71EF320AD746E1D3B628BA79B9859F741E082542A385502F25DBF55296C3A545E3872760AB7
@@ -192,7 +190,7 @@ n = 0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFC7634D81F4372DDF581A0DB248
 h = 1
 SEC2v2_params["secp384r1"] = [hex(p), hex(a), hex(b), [hex(Gx), hex(Gy)], hex(n), h]
 
-p = 2 ** 521 - 1
+p = 2**521 - 1
 a = 0x01FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFC
 b = 0x0051953EB9618E1C9A1F929A21A0B68540EEA2DA725B99B315F3B8B489918EF109E156193951EC7E937B1652C0BD3BB1BF073573DF883D2C34F1EF451FD46B503F00
 Gx = 0x00C6858E06B70404E9CD9E3ECB662395B4429C648139053FB521F828AF606B4D3DBAA14B5E77EFE75928FE1DC127A2FFA8DE3348B3C1856A429BF97E7E31C2E5BD66
@@ -399,21 +397,21 @@ with open(filename, "w") as file_:
 
 if __name__ == "__main__":
     filename = path.join(datadir, "ec_Brainpool.json")
-    with open(filename, "r") as file_:
+    with open(filename) as file_:
         Brainpool_params2 = json.load(file_)
     assert Brainpool_params == Brainpool_params2
 
     filename = path.join(datadir, "ec_NIST.json")
-    with open(filename, "r") as file_:
+    with open(filename) as file_:
         NIST_params2 = json.load(file_)
     assert NIST_params == NIST_params2
 
     filename = path.join(datadir, "ec_SEC2v1_insecure.json")
-    with open(filename, "r") as file_:
+    with open(filename) as file_:
         SEC2v1_params2 = json.load(file_)
     assert SEC2v1_params == SEC2v1_params2
 
     filename = path.join(datadir, "ec_SEC2v2.json")
-    with open(filename, "r") as file_:
+    with open(filename) as file_:
         SEC2v2_params2 = json.load(file_)
     assert SEC2v2_params == SEC2v2_params2

@@ -10,7 +10,6 @@
 
 import hashlib
 import time
-from typing import List
 
 import matplotlib.pyplot as plt  # type: ignore
 
@@ -26,7 +25,7 @@ print(f"\nstring is: {msg}")
 print(f"{zeros} required zeros")
 
 # n[i] is used to count the results starting with i+1 zeros
-n: List[int] = []
+n: list[int] = []
 maxEval = pow(16, zeros + 1)
 i = j = nonce = 0
 start = time.time()
